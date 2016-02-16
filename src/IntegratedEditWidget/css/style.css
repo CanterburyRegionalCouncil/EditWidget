@@ -1,0 +1,62 @@
+.jimu-widget-editdiv{
+    width:100%;
+    position: absolute;
+    margin: 0 auto;
+    height: auto;
+    top:0px;
+    padding: 0px !important;
+}
+.jimu-widget-maskdiv {
+    width:100%;
+    position: absolute;
+    margin: 0 auto;
+    z-index:9999;
+    opacity:.2;
+    background-color:#000;
+    display:none;
+}
+.jimu-widget-linksdiv {
+    width:100%;
+    position: absolute;
+    margin: 0 auto;
+    bottom: 0px !important;
+}
+
+.jimu-widget-scaleLimitdiv {
+    width:100%;
+    position: absolute;
+    margin: 0 auto;
+    height:36px;
+    margin-top:10px;
+}
+
+
+.jimu-widget-edit .esriAttributeInspector .atiField{
+  width: 220px;
+}
+.jimu-widget-edit .buttonSave{
+  margin-left: 50px;
+  margin-top: 0px;
+}
+.jimu-widget-edit .esriAttributeInspector .atiLayerName{
+  font-size: 16px;
+}
+.jimu-widget-edit .dojoxGridRowTable{
+  /*width: 350px;*/
+}
+
+.jimu-widget-edit .templatePicker .grid .groupLabel{
+  font-size: 12px;
+}
+
+.jimu-widget-edit .dojoxGridScrollbox{
+  overflow-x: hidden;
+}
+
+.esriAttributeInspector .atiButton {
+    width:58px !important;
+    height:30px;
+    position:relative;
+    float:left;
+    background-image: none !important;
+}

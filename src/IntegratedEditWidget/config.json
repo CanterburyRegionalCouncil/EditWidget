@@ -1,0 +1,45 @@
+{
+  "editor": {
+    "enableUndoRedo": true,
+    "toolbarVisible": true,
+    "toolbarOptions": {
+      "mergeVisible": true,
+      "cutVisible": true,
+      "reshapeVisible": true
+    },
+    "layerInfos": []
+  },
+  "portalGroupName": "",
+  "urlParamInfos": [
+    {
+      "paramTitle": "Portal Group Name",
+      "urlTag": "GRP",
+      "paramName": "portalGroupNameIdentifier"
+    },
+    {
+      "paramTitle": "Source Integration App",
+      "urlTag": "KEY",
+      "paramName": "appTypeIdentifier"
+    },
+    {
+      "paramTitle": "Feature ID Field",
+      "urlTag": "FID",
+      "paramName": "featureIdentifier"
+    },
+    {
+      "paramTitle": "Fallback Search Address",
+      "urlTag": "ADD",
+      "paramName": "fallbackAddressIdentifier"
+    },
+    {
+      "paramTitle": "Source Field Values",
+      "urlTag": "SFV",
+      "paramName": "fieldValueIdentifier"
+    }
+  ],
+  "presetSourceFields": [],
+  "links": [],
+  "editScaleLimit": "200000",
+  "featureIdentifierField": "",
+  "geocoderService": "https://geocode.arcgis.com/arcgis/rest/services/World/GeocodeServer"
+}

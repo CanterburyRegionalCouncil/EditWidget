@@ -1,0 +1,126 @@
+<div style="width:100%;">
+  <div data-dojo-attach-point="secondPageDiv" style="display:none">
+      <div class="jimu-btn" style="margin-bottom:10px;" data-dojo-attach-point="setGroup" data-dojo-attach-event="click:backToFirstPage">${nls.back}</div>
+      <div data-dojo-attach-point="tableFieldInfos"></div>
+  </div>
+  <div data-dojo-attach-point="firstPageDiv">
+    <table class="setting-table input-table" cellspacing="0">
+      <tbody>
+        <tr>
+          <td class="first jimu-trailing-padding1">${nls.toolbarVisible}</td>
+          <td class="second jimu-leading-padding1">
+            <div class="" style="">
+              <input data-dojo-attach-point="toolbarVisible" 
+              data-dojo-attach-event="click:onToolbarSelected"
+              data-dojo-type="dijit/form/CheckBox"/>
+            </div>
+          </td>
+        </tr>
+        <tr data-dojo-attach-point="toolbarOptionsTr">
+          <td class="first jimu-trailing-padding1">${nls.toolbarOptions}</td>
+          <td class="second jimu-leading-padding1">
+            <span class="jimu-trailing-margin05 jimu-float-leading">${nls.mergeVisible}</span>
+            <div class="jimu-trailing-margin2 jimu-float-leading">
+              <input   data-dojo-attach-point="mergeVisible" 
+              data-dojo-type="dijit/form/CheckBox"/>
+            </div>
+
+            <span class="jimu-trailing-margin05 jimu-float-leading" >${nls.cutVisible}</span>
+            <div class="jimu-trailing-margin2 jimu-float-leading">
+              <input data-dojo-attach-point="cutVisible" 
+              data-dojo-type="dijit/form/CheckBox"/>
+            </div>
+
+            <span class="jimu-trailing-margin05 jimu-float-leading" >${nls.reshapeVisible}</span>
+            <div class="jimu-trailing-margin2 jimu-float-leading">
+              <input data-dojo-attach-point="reshapeVisible" 
+              data-dojo-type="dijit/form/CheckBox"/>
+            </div>
+
+            <span class="jimu-trailing-margin05 jimu-float-leading" >${nls.enableUndoRedo}</span>
+             <div class="jimu-trailing-margin2 jimu-float-leading">
+              <input  data-dojo-attach-point="enableUndoRedo" 
+              data-dojo-type="dijit/form/CheckBox"/>
+            </div>
+          </td>
+        </tr>
+         
+    </tbody>
+    </table><br>
+    <div data-dojo-attach-point="tableLayerInfos"></div>
+    <div data-dojo-attach-point="tableLayerInfosError" style="display:none; padding: 5px;"></div>
+    <div>
+        <div class="jimu-edit-setting-title">${nls.defaultConfigs}</div>
+        <table style="position:relative;display:inline-block;"  class="setting-table input-table" cellspacing="0">
+            <tbody>
+                <tr>
+                    <td class="first">${nls.editScaleLimit}</td>
+                    <td class="second">
+                        <div style="position:relative;width:100%;float:left;">
+                            <input type="text" class="jimu-scale-input" data-dojo-type="dijit/form/TextBox"
+                                   data-dojo-attach-point="editScaleLimit"
+                                   data-dojo-props="style:{marginLeft:'10px'}" />
+                            <span class="jimu-scale-prefix">1 : </span>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="first">${nls.portalGroupName}</td>
+                    <td class="second">
+                        <input type="text" data-dojo-type="dijit/form/TextBox"
+                               data-dojo-attach-point="portalGroupName"
+                               data-dojo-props="style:{width:'600px',marginLeft:'10px'}" />
+                    </td>
+                    <td>
+                        <div class="jimu-btn" style="margin-left:5px;" data-dojo-attach-point="setGroup" data-dojo-attach-event="click:_onSetGroup">${nls.set}</div>
+                        <div class="jimu-btn" style="margin-left:5px;" data-dojo-attach-point="unsetGroup" data-dojo-attach-event="click:_onUnsetGroup">${nls.unset}</div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="first">*${nls.featureIdentifierField}</td>
+                    <td class="second">
+                        <input type="text" data-dojo-type="dijit/form/ValidationTextBox"
+                               data-dojo-attach-point="featureIdentifierField"
+                               data-dojo-props="style:{width:'250px',marginLeft:'10px'},required:true" />
+                    </td>
+                </tr>
+                <tr>
+                    <td class="first">*${nls.geocoderService}</td>
+                    <td class="second">
+                        <input type="text" data-dojo-type="dijit/form/ValidationTextBox"
+                               data-dojo-attach-point="geocoderService"
+                               data-dojo-props="style:{width:'600px',marginLeft:'10px'},required:true" />
+                    </td>
+
+                </tr>
+                <!--<tr>
+                    <td class="first">
+                        ${nls.geocoderAddressAttr}
+                    </td>
+                    <td class="second">
+                        <input type="text" data-dojo-type="dijit/form/ValidationTextBox"
+                               data-dojo-attach-point="geocoderAddressAttr"
+                               data-dojo-props="style:{width:'200px',marginLeft:'10px'},required:true" />
+                    </td>
+                </tr>-->
+            </tbody>
+        </table>
+        <div class="jimu-edit-setting-title">${nls.urlParamsMap}</div>
+        <div data-dojo-attach-point="urlParamInfos"></div>
+
+        <div class="jimu-edit-setting-title">${nls.presetFields}</div>
+        <div class="add-preset-fields">
+            <span class="add-icon"></span>
+            <span class="add-label" data-dojo-attach-point="addPresetFields">${nls.addPresetFields}</span>
+        </div>
+        <div style="width:500px;" data-dojo-attach-point="presetFieldInfos"></div>
+
+        <div class="jimu-edit-setting-title">${nls.links}</div>
+        <div class="add-links">
+            <span class="add-icon"></span>
+            <span class="add-label" data-dojo-attach-point="addLinks">${nls.addLinks}</span>
+        </div>
+        <div data-dojo-attach-point="linkInfos"></div>
+    </div>
+  </div>
+</div>

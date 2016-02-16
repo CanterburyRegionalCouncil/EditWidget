@@ -1,0 +1,15 @@
+{
+  "name": "IntegratedEditWidget",
+  "platform": "HTML",
+  "version": "11767",
+  "wabVersion": "1.3",
+  "author": "GBS",
+  "description": "",
+  "copyright": "",
+  "license": "http://www.apache.org/licenses/LICENSE-2.0",
+  "client":"GISCO",
+  "clientVersion":"0.1",
+  "properties": {
+  	"keepConfigAfterMapSwithched": false
+  }
+}
