@@ -86,6 +86,7 @@ define([
                   height: "100%",
                   width: "100%"
               });
+              this.editorMask = null;
           } else {
               if (this._editMode) {
                   this._updateLinksUI();
@@ -479,12 +480,18 @@ define([
         }
 
         //query(".esriEditor", this.domNode).style('height', height + 'px');
-        query(".templatePicker", this.editorContainer).style('height', height - 50 + 'px');
-        query(".grid", this.editorContainer).style('height', height - 60 + 'px');
-        query(".dojoxGridView", this.editorContainer).style('height', height - 60 + 'px');
-        query(".dojoxGridScrollbox", this.editorContainer).style('height', height - 60 + 'px');
+        query(".templatePicker", this.editorContainer).style('height', height - 60 + 'px');
+        query(".grid", this.editorContainer).style('height', height - 70 + 'px');
+        query(".dojoxGridView", this.editorContainer).style('height', height - 70 + 'px');
+        query(".dojoxGridScrollbox", this.editorContainer).style('height', height - 70 + 'px');
 
         query(".dojoxGridRowTable", this.editorContainer).style('width', width - 32 + 'px');
+        if (this.editorMask) {
+            domStyle.set(this.editorMask, {
+                'height': (height - 30) + "px",
+                'bottom': domStyle.get(this.editorContainer,"bottom")
+            });
+        }
       },
       _isPortalGroupFromUrl: function () {
             var urlObject = urlUtils.urlToObject(window.location.href);
@@ -863,6 +870,7 @@ define([
           if (!(this._editScaleLimit)) {
               domConstruct.destroy(this.scaleDiv);
               domConstruct.destroy(this.editorMask);
+              this.editorMask = null;
           } else {
               if (this.linksDiv) {
                   var linksDivHeight = domStyle.get(this.linksDiv, "height");
@@ -1031,22 +1039,34 @@ define([
                   return queryValue
               }
           }));
-          window.open(url, "_blank");
+          //window.open(url, "_blank");
+          window.open(url,"_self");
       },
       _setVersionTitle: function () {
-          var widgetBody = query(this.domNode).closest('.jimu-panel');
-          var titleNode = query('.title-label', widgetBody[0]);
-
+          var labelNode = this._getLabelNode(this);
           var manifestInfo = this.manifest;
-          var version = manifestInfo.version;
-          var clientVersion = manifestInfo.clientVersion;
+          var devVersion = manifestInfo.version;
+          var devWabVersion = manifestInfo.developedAgainst || manifestInfo.wabVersion;
           var client = manifestInfo.client;
-
-          var title = "Dev version: " + version + "\n";
-          title += "Client version: " + clientVersion + "\n";
+          var title = "Dev version: " + devVersion + "\n";
+          title += "Developed/Modified against: WAB" + devWabVersion + "\n";
           title += "Client: " + client;
-          domAttr.set(titleNode[0], 'title', title);
-      }
+          if (labelNode) {
+              domAttr.set(labelNode, 'title', title);
+          }
+     },
+      _getLabelNode: function (widget) {
+          var labelNode;
+          if (!(widget.labelNode) && !(widget.titleLabelNode) ) {
+              if (widget.getParent()) {
+                  labelNode = this._getLabelNode(widget.getParent());
+              }
+          } else {
+              labelNode = widget.labelNode || widget.titleLabelNode;
+          }
+          return labelNode;
+        
+        }
     });
   });
 

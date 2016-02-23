@@ -5,6 +5,7 @@
     height: auto;
     top:0px;
     padding: 0px !important;
+    overflow:auto !important;
 }
 .jimu-widget-maskdiv {
     width:100%;
@@ -60,3 +61,16 @@
     float:left;
     background-image: none !important;
 }
+
+
+.DartTheme .jimu-widget-edit .templatePicker *{
+    /*color :#928383 !important;*/
+}
+.DartTheme .jimu-widget-edit .templatePicker{
+    /*background-color: #fff !important;*/
+}
+.DartTheme .jimu-widget-maskdiv {
+    background-color:#000 !important;
+    opacity:.5;
+}
+
